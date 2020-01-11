@@ -1,0 +1,22 @@
+body {
+  background-color: #3b3b3b;
+}
+#page {
+  margin-top: 20px;
+  display: grid;
+  grid-gap: 20px 20px;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 100px;
+}
+
+.ant-pagination {
+  display: flex;
+  justify-content: center;
+}
+#allItems {
+  display: grid;
+  align-self: center;
+  grid-gap: 10px 20px;
+  justify-self: center;
+  grid-template-columns: repeat(5, 1fr);
+}
