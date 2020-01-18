@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Pagination } from 'antd'
 import axios from 'axios'
-import PokemonItem from '../PokemonItem/PokemonItem'
+import PokemonItem from '../PokemonItem'
 import 'antd/dist/antd.css'
 import './Main.scss'
 
@@ -32,18 +32,14 @@ export class Main extends Component {
   }
 
   render() {
-    const { pokemonArray, countPokemons } = this.props
+    const { pokemonArray, countPokemons, history } = this.props
     const { onChange } = this
     return (
       <div id="page">
         <div id="allItems">
           {pokemonArray.length ? (
             pokemonArray.map(items => (
-              <PokemonItem
-                key={items.id}
-                source={items}
-                onClick={console.log('@')}
-              />
+              <PokemonItem key={items.id} source={items} history={history} />
             ))
           ) : (
             <div />

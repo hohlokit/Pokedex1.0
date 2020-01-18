@@ -2,11 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-import reducers from './Reducers/index'
-import { Main } from './Components/Main/'
-import PokemonInfoItem from './Components/PokemonInfoItem/PokemonInfoItem'
-import { BrowserRouter, Route } from 'react-router-dom'
-import Header from './Components/Header/Header'
+import reducers from './Reducers/'
+import { HashRouter as Router } from 'react-router-dom'
+import App from './Components/App'
 
 const store = createStore(
   reducers,
@@ -17,12 +15,9 @@ console.log(store.getState())
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <Header />
-      <Route exact path="/" component={Main} />
-      <Route path="/main" component={Main} />
-      <Route path="/pokemon" component={PokemonInfoItem} />
-    </BrowserRouter>
+    <Router >
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root'),
 )
